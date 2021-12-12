@@ -9,3 +9,9 @@ cat $HOME/.ironfish/config.json
 #set the NODE name
 ironfish config:set nodeName $IRONFISH_NODENAME
 ironfish config:set blockGraffiti $IRONFISH_NODENAME
+#Create wallet:
+ironfish accounts:create $IRONFISH_WALLET
+#Set created wallet as default wallet:
+ironfish accounts:use $IRONFISH_WALLET
+#Check your balance:
+ironfish accounts:balance $IRON
