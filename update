@@ -1,0 +1,26 @@
+. $HOME/.bashrc
+. $HOME/.bash_profile
+mkdir -p ~/ironfish_keys
+ironfish accounts:export $IRONFISH_WALLET ~/ironfish_keys/$IRONFISH_WALLET.json
+cat  ~/ironfish_keys/$IRONFISH_WALLET.json
+wget -q -O ironfish.sh https://api.nodes.guru/ironfish.sh && chmod +x ironfish.sh && sudo /bin/bash ironfish.sh
+systemctl stop ironfishd ironfishd-miner
+ironfish reset
+ironfish accounts:import ~/ironfish_keys/$IRONFISH_WALLET.json
+systemctl restart ironfishd ironfishd-miner
+ironfish config:get blockGraffiti
+
+# Check the result with your graffiti
+
+
+
+
+
+
+
+
+
+
+
+
+
